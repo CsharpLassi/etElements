@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import argparse
-
+import etElementsVersion
 
 class Resistor:
     pass
@@ -14,6 +14,8 @@ def main():
     parser.add_argument('-r', dest='value', help='Resistor Value', type=float)
     parser.add_argument('-i', dest='current', help='Resistor Current', type=float)
     parser.add_argument('-d', default=0.1, dest='diff', help='Validation Range in Percent (0.1)', type=float)
+    etElementsVersion.includeversion(parser)
+
 
     result = parser.parse_args()
     if result.voltage and result.value and result.current:
